@@ -1,0 +1,20 @@
+{
+  "name": "outsourcing-starter",
+  "description": "start a outsourcing project rapidly for a living",
+  "main": "build/index.html",
+  "authors": [
+    "Jinyoung Kim"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jkiimm/outsourcing-starter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
