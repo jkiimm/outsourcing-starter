@@ -1,3 +1,4 @@
+const mkdirp = require('mkdirp');
 const sassGlob = require('node-sass-glob');
 const sass = require('node-sass');
 const fs = require('fs');
@@ -20,10 +21,15 @@ function compile(event, path) {
       process.stdout.write(`=> ${event.toUpperCase()} ${path}\n`);
     }
 
-    const cssPath = 'build/assets/css/main.css';
-    fs.writeFile(cssPath, result.css, (err) => {
+    const css = { dir: 'build/assets/css', name: 'main.css' };
+
+    mkdirp(css.dir, (err) => {
       if (err) { throw err; }
-      process.stdout.write(`=> Wrote CSS to ${cssPath}\n`);
+
+      fs.writeFile(`${css.dir}/${css.name}`, result.css, (err) => {
+        if (err) { throw err; }
+        process.stdout.write(`=> Wrote CSS to ${css.dir}/${css.name}\n`);
+      });
     });
   });
 }
