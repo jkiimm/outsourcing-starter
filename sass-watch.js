@@ -16,7 +16,7 @@ function compile(event, path) {
     includePaths: ['src/stylesheets/'],
     importer: sassGlob
   }, (err, result) => {
-    if (err) { throw err; }
+    if (err) { return console.error(err); }
     if (path) {
       process.stdout.write(`=> ${event.toUpperCase()} ${path}\n`);
     }
