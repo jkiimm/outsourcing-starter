@@ -7,6 +7,7 @@ export default {
   dest: 'build/assets/js/main.js',
   format: 'iife',
   sourceMap: 'inline',
+  context: 'window',
   plugins: [
     babel({ exclude: 'node_modules/**' }),
     nodeResolve({ browser: true })
