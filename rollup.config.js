@@ -10,6 +10,6 @@ export default {
   context: 'window',
   plugins: [
     babel({ exclude: 'node_modules/**' }),
-    nodeResolve({ browser: true })
+    nodeResolve({ jsnext: true, main: true, browser: true })
   ],
 };
