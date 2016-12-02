@@ -1,6 +1,7 @@
 // Rollup plugins
 import babel from 'rollup-plugin-babel';
 import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 
 export default {
   entry: 'src/scripts/main.js',
@@ -10,6 +11,7 @@ export default {
   context: 'window',
   plugins: [
     babel({ exclude: 'node_modules/**' }),
-    nodeResolve({ jsnext: true, main: true, browser: true })
+    nodeResolve({ jsnext: true, main: true, browser: true }),
+    commonjs()
   ],
 };
