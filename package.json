@@ -21,7 +21,7 @@
     "sass-lint": "~1.10.2"
   },
   "scripts": {
-    "precommit": "eslint -c .eslintrc.json src/scripts && scss-lint -c .scss-lint.yml",
+    "precommit": "eslint -c .eslintrc.json --rule 'no-console: 2' src/scripts && scss-lint -c .scss-lint.yml",
     "build": "rollup -c",
     "dev": "rollup -c --watch",
     "serve": "rm -rf build/assets/{js,css} && npm-run-all --parallel sass dev webserver",
