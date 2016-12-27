@@ -2,3 +2,4 @@ node_modules/
 build/assets/css/
 build/assets/js/
 build/bower_components/
+*.log
